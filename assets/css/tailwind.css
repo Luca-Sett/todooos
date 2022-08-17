@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .white-gradient {
+    @apply bg-gradient-to-tr;
+    @apply from-white-gradient-from;
+    @apply to-white-gradient-to;
+  }
+
+  .blue-gradient {
+    @apply bg-gradient-to-tr;
+    @apply from-blue-gradient-from;
+    @apply to-blue-gradient-to;
+  }
+}
