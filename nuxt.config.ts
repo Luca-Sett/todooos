@@ -10,4 +10,7 @@ export default defineNuxtConfig({
     transpile: ["@headlessui/vue"],
   },
   css: ["~/assets/css/tailwind.css"],
+  experimental: {
+    reactivityTransform: true,
+  },
 });

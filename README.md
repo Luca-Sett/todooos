@@ -1,10 +1,11 @@
 # Toodoos.
 
 A web app for organisations to track their tasks and improve efficiency.
+Built solely by Luca Sett.
 
 ## Setup
 
-Make sure to install the dependencies:
+Install the dependencies:
 
 ```bash
 # yarn
@@ -38,5 +39,3 @@ Locally preview production build:
 ```bash
 npm run preview
 ```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.

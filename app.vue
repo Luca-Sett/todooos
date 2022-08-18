@@ -1,8 +1,10 @@
 <template>
-  <NuxtLayout>
-    <NuxtLoadingIndicator class="!bg-none !bg-accent" />
-    <NuxtPage />
-  </NuxtLayout>
+  <div class="text-off-white">
+    <NuxtLayout>
+      <NuxtLoadingIndicator class="!bg-none !bg-accent" />
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
 
 <script setup></script>
@@ -20,7 +22,30 @@ a {
   @apply ring-transparent;
   @apply ring-2;
   @apply ring-inset;
+  @apply rounded-lg;
+  @apply hover:text-white;
+  @apply focus:text-white;
   @apply focus:ring-pale-white;
+  @apply px-5;
+  @apply py-2;
+}
+
+input,
+button,
+a[type="button"] {
+  @apply shadow-lg;
+  @apply hover:shadow-xl;
+  @apply focus:shadow-xl;
+}
+
+input {
+  @apply bg-dark-background;
+  @apply py-2;
+}
+
+input[type="submit"] {
+  @apply bg-accent;
+  @apply cursor-pointer;
 }
 
 body {
@@ -49,6 +74,16 @@ body {
 
 .layout-leave-to {
   transform: translateY(-20%);
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 150ms;
+}
+
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 </style>

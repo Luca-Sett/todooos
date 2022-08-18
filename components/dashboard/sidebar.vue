@@ -10,48 +10,18 @@
       <div>
         <div class="font-bold text-pale-white mb-2">TOODOOS</div>
         <div class="flex flex-col gap-2">
-          <NuxtLink
-            to="/dashboard/test"
-            class="transition-all px-5 py-2 rounded-lg bg-transparent"
-          >
-            View toodoos
-          </NuxtLink>
-          <NuxtLink
-            to="/dashboard/test1"
-            class="transition-all px-5 py-2 rounded-lg"
-          >
-            Add toodoo
-          </NuxtLink>
-          <NuxtLink
-            to="/dashboard/test2"
-            class="transition-all px-5 py-2 rounded-lg"
-          >
-            View archived toodoos
-          </NuxtLink>
+          <NuxtLink to="/dashboard/test"> View toodoos </NuxtLink>
+          <NuxtLink to="/dashboard/test1"> Add toodoo </NuxtLink>
+          <NuxtLink to="/dashboard/test2"> View archived toodoos </NuxtLink>
         </div>
       </div>
 
       <div>
         <div class="font-bold text-pale-white mb-2">PROFILE</div>
         <div class="flex flex-col gap-2">
-          <NuxtLink
-            to="/dashboard/test3"
-            class="transition-all px-5 py-2 rounded-lg"
-          >
-            View profile
-          </NuxtLink>
-          <NuxtLink
-            to="/dashboard/test4"
-            class="transition-all px-5 py-2 rounded-lg"
-          >
-            View organisation
-          </NuxtLink>
-          <NuxtLink
-            to="/dashboard/test5"
-            class="transition-all px-5 py-2 rounded-lg"
-          >
-            Edit preferences
-          </NuxtLink>
+          <NuxtLink to="/dashboard/test3"> View profile </NuxtLink>
+          <NuxtLink to="/dashboard/test4"> View organisation </NuxtLink>
+          <NuxtLink to="/dashboard/test5"> Edit preferences </NuxtLink>
         </div>
       </div>
     </div>

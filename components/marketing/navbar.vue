@@ -9,14 +9,14 @@
       </div>
 
       <div class="font-semibold flex gap-10 items-center">
-        <MarketingNavbarLink to="/"> About </MarketingNavbarLink>
-        <MarketingNavbarLink to="/"> Plans </MarketingNavbarLink>
-        <MarketingNavbarLink to="/login" class="bg-dark-background">
-          Login
-        </MarketingNavbarLink>
-        <MarketingNavbarLink to="/register-organisation" class="bg-accent">
+        <NuxtLink to="/"> About </NuxtLink>
+        <NuxtLink to="/"> Plans </NuxtLink>
+        <NuxtLink to="/login" type="button" class="bg-dark-background">
+          Log in
+        </NuxtLink>
+        <NuxtLink to="/register" type="button" class="bg-accent">
           Register
-        </MarketingNavbarLink>
+        </NuxtLink>
       </div>
     </nav>
   </div>

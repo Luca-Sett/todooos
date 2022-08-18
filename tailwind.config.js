@@ -32,7 +32,7 @@ module.exports = {
       },
       maxWidth: {
         container: "1200px",
-        form: "720px",
+        form: "680px",
       },
     },
   },
