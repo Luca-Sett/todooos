@@ -18,10 +18,6 @@ const email = computed(() => {
   return user.value ? user.value.email : "Loading...";
 });
 
-watchEffect(() => {
-  if (!user.value) return navigateTo("/");
-});
-
 const signOut = async () => {
   try {
     const { error: signOutError } = await supabase.auth.signOut();

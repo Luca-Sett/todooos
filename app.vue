@@ -7,7 +7,14 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const user = useSupabaseUser();
+
+watch([user], () => {
+  if (user.value) return navigateTo("/dashboard/test");
+  return navigateTo("/");
+});
+</script>
 
 <style lang="postcss">
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");

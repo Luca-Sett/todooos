@@ -7,6 +7,6 @@
 <script setup>
 definePageMeta({
   layout: "dashboard",
-  middleware: ["auth", "dashboard"],
+  middleware: "dashboard",
 });
 </script>

@@ -45,11 +45,6 @@ definePageMeta({
 });
 
 const supabase = useSupabaseClient();
-const user = useSupabaseUser();
-
-watchEffect(() => {
-  if (user.value) return navigateTo("/dashboard/test");
-});
 
 const loginData = ref({
   email: "",
