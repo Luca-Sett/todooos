@@ -1,33 +1,33 @@
 <template>
   <div>
     <Heading>
-      Log in to your <span class="text-accent">toodoos</span> account
+      log in to your <span class="text-accent">todooos</span> account
     </Heading>
 
     <Info> Ready to get stuff done? </Info>
 
     <LForm
       @submit="login"
-      buttonText="Login"
+      buttonText="login"
       :loading="loading"
       :errorMessage="errorMessage"
     >
-      <LInput
+      <LTextInput
         v-model="loginData.email"
         :v$="v$.email"
         _for="email"
         label="EMAIL ADDRESS"
-        placeholder="Email address"
+        placeholder="email address"
         autocomplete="email"
         type="email"
       />
 
-      <LInput
+      <LTextInput
         v-model="loginData.password"
         :v$="v$.password"
         _for="password"
         label="PASSWORD"
-        placeholder="Password"
+        placeholder="password"
         autocomplete="current-password"
         type="password"
       />
@@ -40,7 +40,7 @@ import useVuelidate from "@vuelidate/core";
 import { required, email, helpers } from "@vuelidate/validators";
 
 definePageMeta({
-  layout: "marketing",
+  layout: "marketing-layout",
   middleware: "guest",
 });
 

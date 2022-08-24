@@ -1,4 +1,4 @@
-# Toodoos.
+# Todooos.
 
 A web app for organisations to track their tasks and improve efficiency.
 Built solely by Luca Sett.

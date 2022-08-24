@@ -1,18 +1,16 @@
 <template>
-  <div class="text-off-white">
-    <NuxtLayout>
-      <NuxtLoadingIndicator class="!bg-none !bg-accent" />
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtLoadingIndicator class="!bg-none !bg-accent" />
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script setup>
 const user = useSupabaseUser();
 
-watch([user], () => {
-  if (user.value) return navigateTo("/dashboard/test");
-  return navigateTo("/");
+watch(user, (newUser, oldUser) => {
+  if (newUser && !oldUser) return navigateTo("/dashboard/view-todooos");
+  if (!newUser && oldUser) return navigateTo("/");
 });
 </script>
 
@@ -21,42 +19,27 @@ watch([user], () => {
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,500,0,0");
 
-input,
-button,
-a {
-  @apply transition-all;
-  @apply outline-none;
-  @apply ring-transparent;
-  @apply ring-2;
-  @apply ring-inset;
-  @apply rounded-lg;
-  @apply hover:text-white;
-  @apply focus:text-white;
-  @apply focus:ring-pale-white;
-  @apply px-5;
-  @apply py-2;
-}
-
-input,
-button,
-a[type="button"] {
-  @apply shadow-lg;
-  @apply hover:shadow-xl;
-  @apply focus:shadow-xl;
-}
-
-input {
-  @apply bg-dark-background;
-  @apply py-2;
-}
-
-input[type="submit"] {
-  @apply bg-accent;
-  @apply cursor-pointer;
-}
-
 body {
-  @apply bg-light-background;
+  @apply bg-dark_blue;
+  @apply text-off_white;
+  overflow-y: scroll;
+}
+
+::selection {
+  @apply bg-accent/30;
+  @apply rounded;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-blue;
+  padding: 2px;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-accent;
+  border-radius: 4px;
 }
 
 .page-enter-active,
@@ -68,7 +51,7 @@ body {
 .page-leave-to {
   opacity: 0;
 }
-
+/*
 .layout-enter-active,
 .layout-leave-active {
   transition: transform 0.5s, opacity 0.5s;
@@ -83,7 +66,7 @@ body {
   transform: translateY(-20%);
   opacity: 0;
 }
-
+*/
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 150ms;

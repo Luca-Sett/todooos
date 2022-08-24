@@ -1,57 +1,57 @@
 <template>
   <div>
     <Heading>
-      Create your <span class="text-accent">toodoos</span> account
+      create your <span class="text-accent">todooos</span> account
     </Heading>
 
     <Info>
       After you're registered, you can use your
-      <span class="font-bold text-accent">toodoos</span> account to keep track
+      <span class="font-bold text-accent">todooos</span> account to keep track
       of your personal tasks or join your organisation to turbocharge your
       productivity.
     </Info>
 
     <LForm
       @submit="register"
-      buttonText="Register"
+      buttonText="register"
       :loading="loading"
       :errorMessage="errorMessage"
     >
-      <LInput
+      <LTextInput
         v-model="registerData.name"
         :v$="v$.name"
         _for="name"
         label="FULL NAME"
-        placeholder="Full name"
+        placeholder="full name"
         autocomplete="name"
       />
 
-      <LInput
+      <LTextInput
         v-model="registerData.email"
         :v$="v$.email"
         _for="email"
         label="EMAIL ADDRESS"
-        placeholder="Email address"
+        placeholder="email address"
         autocomplete="email"
         type="email"
       />
 
-      <LInput
+      <LTextInput
         v-model="registerData.password"
         :v$="v$.password"
         _for="password"
         label="PASSWORD"
-        placeholder="Password"
+        placeholder="password"
         autocomplete="new-password"
         type="password"
       />
 
-      <LInput
+      <LTextInput
         v-model="registerData.confirmPassword"
         :v$="v$.confirmPassword"
         _for="confirm-password"
         label="CONFIRM PASSWORD"
-        placeholder="Confirm password"
+        placeholder="confirm password"
         autocomplete="new-password"
         type="password"
       />
@@ -70,11 +70,9 @@ import {
 } from "@vuelidate/validators";
 
 definePageMeta({
-  layout: "marketing",
+  layout: "marketing-layout",
   middleware: "guest",
 });
-
-const supabase = useSupabaseClient();
 
 const registerData = ref({
   name: "",
@@ -108,6 +106,7 @@ const rules = computed(() => ({
 }));
 
 const v$ = useVuelidate(rules, registerData);
+const supabase = useSupabaseClient();
 
 const loading = ref(false);
 const errorMessage = ref("");
@@ -122,12 +121,20 @@ const register = async () => {
   }
 
   try {
-    const { error: signUpError } = await supabase.auth.signUp({
+    const { user, error: signUpError } = await supabase.auth.signUp({
       email: registerData.value.email,
       password: registerData.value.password,
     });
 
     if (signUpError) throw signUpError;
+
+    const { error: storeUserError } = await supabase
+      .from("users")
+      .insert([{ id: user.id, name: registerData.value.name }], {
+        returning: "minimal",
+      });
+
+    if (storeUserError) throw storeUserError;
   } catch (error) {
     if (error.message === "User already registered")
       errorMessage.value = "There is already an account with this email";

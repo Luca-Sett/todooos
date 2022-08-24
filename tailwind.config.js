@@ -1,19 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
   theme: {
     colors: {
       transparent: "transparent",
-      "light-background": "#141B27",
-      "dark-background": "#0D121ACC",
-      accent: "#FF7332",
-      white: "#FFF",
-      "pale-white": "#FFFFFF99",
-      "off-white": "#FFFFFFE0",
-      "white-gradient-from": "#FFFFFF0D",
-      "white-gradient-to": "#FFFFFF21",
-      "blue-gradient-from": "#69A8FF0D",
-      "blue-gradient-to": "#73A3E521",
+      dark_blue: "#222D41",
+      blue: "#2E384F",
+      light_blue: "#3B4866",
+      accent: "#F2B321",
+      off_white: "#FFFFFFE6",
       error: "#F74F4F",
     },
     fontFamily: {
@@ -28,11 +22,14 @@ module.exports = {
     },
     extend: {
       height: {
-        navbar: "80px",
+        navbar: "var(--navbar-height)",
       },
       maxWidth: {
         container: "1200px",
         form: "680px",
+      },
+      padding: {
+        container: "min(8%, 5rem)",
       },
     },
   },

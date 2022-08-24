@@ -1,10 +1,11 @@
 <template>
   <form
     @submit.prevent="emit('submit')"
-    class="max-w-form mx-auto blue-gradient rounded-3xl p-6"
+    novalidate
+    class="max-w-form mx-auto bg-blue rounded-3xl p-6 shadow-lg"
   >
     <div
-      class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-x-6 gap-y-2"
+      class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-6 gap-y-2"
     >
       <slot />
 
@@ -16,12 +17,20 @@
             </div>
           </Transition>
         </div>
+
+        <!-- <LSubmit :loading="loading" :button-text="buttonText" /> -->
+
+        <!--  -->
         <input
           type="submit"
           :value="loading ? 'Loading...' : buttonText"
-          :class="loading ? '!cursor-default opacity-75' : ''"
           :disabled="loading"
+          class="text-blue text-off_white transition-all cursor-pointer font-semibold bg-accent shadow-md outline-none ring-transparent ring-2 ring-inset rounded-lg px-5 py-2 hover:shadow-lg focus-visible:shadow-lg focus-visible:ring-off_white/80"
+          :class="loading ? '!cursor-default opacity-75' : ''"
         />
+        <!-- 
+          
+         -->
       </div>
     </div>
   </form>

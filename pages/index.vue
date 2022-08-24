@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Heading>Home</Heading>
+  <div class="min-h-[200vh]">
+    <Heading>home</Heading>
     <Info>
       This will eventually be a bejazzled marketing page with all the fancy
       features to sell this amazing product.
@@ -10,7 +10,7 @@
 
 <script setup>
 definePageMeta({
-  layout: "marketing",
+  layout: "marketing-layout",
   middleware: "guest",
 });
 </script>

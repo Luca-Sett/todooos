@@ -12,10 +12,11 @@
       :id="_for"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
-      :class="v$.$error ? 'ring-2 ring-error focus:ring-error' : ''"
+      class="transition-all bg-dark_blue shadow-md outline-none ring-transparent ring-2 ring-inset rounded-lg px-5 py-2 hover:shadow-lg focus:shadow-lg focus:ring-off_white/40"
+      :class="v$.$error ? 'ring-error focus:ring-error' : ''"
     />
 
-    <div class="text-error h-6">
+    <div class="text-error">
       <Transition name="fade">
         <div v-if="v$.$error">
           {{ v$.$errors[0].$message }}
@@ -46,8 +47,8 @@ const {
   _for,
   label,
   placeholder,
-  type = "text",
   autocomplete = false,
+  type = "text",
 } = defineProps<Props>();
 
 const handleInput = (event) => {
