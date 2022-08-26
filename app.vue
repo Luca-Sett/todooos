@@ -43,12 +43,12 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  @apply bg-blue;
-  @apply bg-dark_blue;
+  @apply bg-transparent;
   padding: 2px;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-accent;
+  @apply bg-off_white/20;
+  @apply bg-accent/40;
   border-radius: 4px;
 }
 

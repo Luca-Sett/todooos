@@ -1,7 +1,11 @@
 <template>
   <div>
-    <Heading> View todooos </Heading>
-    <Info>Here you can view stuff, {{ name }}.</Info>
+    <Heading>view your <span class="text-accent">todooos</span></Heading>
+    <Info>
+      Placeholder content for viewing your todooos. Logged in user is
+      <span class="text-accent">{{ name }}</span
+      >.
+    </Info>
   </div>
 </template>
 

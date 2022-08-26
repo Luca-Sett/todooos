@@ -2,8 +2,8 @@
   <div class="min-h-[200vh]">
     <Heading>home</Heading>
     <Info>
-      This will eventually be a bejazzled marketing page with all the fancy
-      features to sell this amazing product.
+      This is a temporary home page. It will eventually advertise this amazing
+      app.
     </Info>
   </div>
 </template>

@@ -1,10 +1,12 @@
 <template>
   <div
-    class="bg-blue shadow-lg w-72 rounded-3xl flex flex-col justify-between p-5 my-5 ml-5"
+    class="bg-blue shadow-lg w-72 rounded-3xl flex flex-col justify-between p-5 my-5 ml-5 overflow-y-scroll max-h-[calc(100vh-40px)]"
   >
     <div class="flex flex-col gap-10">
       <div class="text-center font-patua text-logo">
-        <span class="text-accent">todooos</span>.
+        <NuxtLink to="/dashboard/view-todooos" class="text-accent">
+          todooos</NuxtLink
+        >.
       </div>
 
       <div>
@@ -28,7 +30,9 @@
       </div>
     </div>
 
-    <LButton class="w-full" @click="signOut">{{ name }} | Sign out</LButton>
+    <LButton class="w-full mt-10" @click="signOut">
+      {{ name }} | Sign out
+    </LButton>
   </div>
 </template>
 

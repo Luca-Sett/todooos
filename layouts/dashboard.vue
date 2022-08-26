@@ -8,10 +8,21 @@
     </div>
   </div>
 
-  <div v-else class="min-h-screen flex">
-    <Sidebar class="shrink-0" />
-    <div class="w-full p-10">
-      <slot />
+  <div v-else>
+    <div class="min-h-screen hidden lg:flex">
+      <Sidebar class="shrink-0" />
+      <div class="w-full p-10">
+        <slot />
+      </div>
+    </div>
+
+    <div class="min-h-screen lg:hidden">
+      <SidebarSmall />
+      <div
+        class="max-w-container px-container mx-auto box-content pb-16 pt-[calc(4rem_+_var(--navbar-height))]"
+      >
+        <slot />
+      </div>
     </div>
   </div>
 </template>

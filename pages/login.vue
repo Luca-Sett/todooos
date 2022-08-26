@@ -90,7 +90,6 @@ const login = async () => {
       email: loginData.value.email,
       password: loginData.value.password,
     });
-
     if (signInError) throw signInError;
   } catch (error) {
     if (error.message === "Invalid login credentials")

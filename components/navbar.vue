@@ -26,12 +26,13 @@
       <Transition name="drop">
         <div
           v-if="isNavDrawerOpen"
-          class="lg:hidden overscroll-contain z-[9999] fixed bg-light_blue/80 top-0 h-full w-full grid place-items-center"
+          class="lg:hidden z-[9999] fixed bg-light_blue/80 top-0 h-full w-full grid place-items-center"
         >
           <div class="flex flex-col place-items-center text-heading">
             <LButton @click="close" class="mb-8">
               <span class="material-symbols-rounded !text-logo">close</span>
             </LButton>
+
             <LLink @click="close" to="/" class="tertiary">home</LLink>
             <LLink @click="close" to="/plans" class="tertiary">plans</LLink>
             <LLink @click="close" to="/login" class="tertiary">login</LLink>
