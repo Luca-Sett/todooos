@@ -6,3 +6,15 @@
     </div>
   </div>
 </template>
+
+<script setup>
+useHead({
+  title: "404",
+  meta: [
+    {
+      name: "description",
+      content: "Uh oh, this page couldn't be found.",
+    },
+  ],
+});
+</script>

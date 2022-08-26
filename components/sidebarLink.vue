@@ -13,6 +13,7 @@
 .router-link-active {
   @apply font-semibold;
   @apply bg-accent;
+  @apply text-white;
   @apply shadow-md;
   @apply focus-visible:ring-off_white/80;
 }

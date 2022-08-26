@@ -74,6 +74,16 @@ definePageMeta({
   layout: "marketing",
 });
 
+useHead({
+  title: "Register",
+  meta: [
+    {
+      name: "description",
+      content: "Register your free todooos account to turbocharge your productivty.",
+    },
+  ],
+});
+
 const registerData = ref({
   name: "",
   email: "",

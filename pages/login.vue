@@ -44,6 +44,16 @@ definePageMeta({
   layout: "marketing",
 });
 
+useHead({
+  title: "Log in",
+  meta: [
+    {
+      name: "description",
+      content: "Log in to your todooos account to get stuff done.",
+    },
+  ],
+});
+
 const supabase = useSupabaseClient();
 
 const loginData = ref({

@@ -9,6 +9,7 @@
 <style scoped lang="postcss">
 .primary {
   @apply bg-accent;
+  @apply text-white;
   @apply shadow-md;
   @apply hover:shadow-lg;
   @apply focus-visible:shadow-lg;
@@ -27,14 +28,6 @@
   @apply hover:text-accent;
   @apply focus-visible:text-accent;
   @apply focus-visible:ring-off_white/40;
-}
-
-.primary.router-link-active {
-  @apply bg-accent;
-}
-
-.secondary.router-link-active {
-  @apply bg-dark_blue;
 }
 
 .tertiary.router-link-active {

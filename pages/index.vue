@@ -13,4 +13,14 @@ definePageMeta({
   middleware: "guest",
   layout: "marketing",
 });
+
+useHead({
+  title: "Home",
+  meta: [
+    {
+      name: "description",
+      content: "Turbocharge your productivity with todooos and get stuff done.",
+    },
+  ],
+});
 </script>

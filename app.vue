@@ -1,26 +1,8 @@
 <template>
-  <NuxtLoadingIndicator class="!bg-none !bg-accent" />
-
   <NuxtLayout>
+    <NuxtLoadingIndicator class="!bg-none !bg-accent" />
     <NuxtPage />
   </NuxtLayout>
-  <!-- logged in -->
-  <!-- <div v-if="user" class="min-h-screen flex">
-    <Sidebar class="shrink-0" />
-    <div class="w-full p-10">
-      <NuxtPage />
-    </div>
-  </div> -->
-
-  <!-- logged out -->
-  <!-- <div v-else class="min-h-screen">
-    <Navbar />
-    <div
-      class="max-w-container px-container mx-auto box-content pb-16 pt-[calc(4rem_+_var(--navbar-height))]"
-    >
-      <NuxtPage />
-    </div>
-  </div> -->
 </template>
 
 <script setup>
@@ -29,6 +11,13 @@ const user = useSupabaseUser();
 watch(user, (newUser, oldUser) => {
   if (newUser && !oldUser) return navigateTo("/dashboard/view-todooos");
   if (!newUser && oldUser) return navigateTo("/");
+});
+
+useHead({
+  titleTemplate: (title) => (title ? `${title} - Todooos.` : "Todooos."),
+  htmlAttrs: {
+    lang: "en",
+  },
 });
 </script>
 

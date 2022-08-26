@@ -8,6 +8,7 @@ module.exports = {
       light_blue: "#3B4866",
       accent: "#F2B321",
       off_white: "#FFFFFFE6",
+      white: "#FFFFFF",
       error: "#F74F4F",
     },
     fontFamily: {
