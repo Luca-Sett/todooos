@@ -1,14 +1,10 @@
 <template>
   <div>
     <Heading> View todooos </Heading>
-    <LButton @click="logout" class="primary">logout</LButton>
+    <Info>Here you can view stuff, {{ name }}.</Info>
   </div>
 </template>
 
 <script setup>
-const supabase = useSupabaseClient();
-
-const logout = () => {
-  supabase.auth.signOut();
-};
+const name = useState("userName");
 </script>

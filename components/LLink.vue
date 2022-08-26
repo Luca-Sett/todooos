@@ -6,10 +6,6 @@
   </NuxtLink>
 </template>
 
-<script setup>
-defineProps(["type"]);
-</script>
-
 <style scoped lang="postcss">
 .primary {
   @apply bg-accent;

@@ -7,7 +7,7 @@
 
 <script setup>
 definePageMeta({
-  layout: "marketing-layout",
   middleware: "guest",
+  layout: "marketing",
 });
 </script>

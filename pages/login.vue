@@ -40,8 +40,8 @@ import useVuelidate from "@vuelidate/core";
 import { required, email, helpers } from "@vuelidate/validators";
 
 definePageMeta({
-  layout: "marketing-layout",
   middleware: "guest",
+  layout: "marketing",
 });
 
 const supabase = useSupabaseClient();

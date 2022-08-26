@@ -1,8 +1,26 @@
 <template>
+  <NuxtLoadingIndicator class="!bg-none !bg-accent" />
+
   <NuxtLayout>
-    <NuxtLoadingIndicator class="!bg-none !bg-accent" />
     <NuxtPage />
   </NuxtLayout>
+  <!-- logged in -->
+  <!-- <div v-if="user" class="min-h-screen flex">
+    <Sidebar class="shrink-0" />
+    <div class="w-full p-10">
+      <NuxtPage />
+    </div>
+  </div> -->
+
+  <!-- logged out -->
+  <!-- <div v-else class="min-h-screen">
+    <Navbar />
+    <div
+      class="max-w-container px-container mx-auto box-content pb-16 pt-[calc(4rem_+_var(--navbar-height))]"
+    >
+      <NuxtPage />
+    </div>
+  </div> -->
 </template>
 
 <script setup>
@@ -22,7 +40,8 @@ watch(user, (newUser, oldUser) => {
 body {
   @apply bg-dark_blue;
   @apply text-off_white;
-  overflow-y: scroll;
+  overflow-y: overlay;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -32,9 +51,11 @@ body {
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   @apply bg-blue;
+  @apply bg-dark_blue;
   padding: 2px;
 }
 ::-webkit-scrollbar-thumb {
@@ -43,35 +64,18 @@ body {
 }
 
 .page-enter-active,
-.page-leave-active {
-  transition: opacity 0.2s;
-}
-
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
-/*
+.page-leave-active,
 .layout-enter-active,
-.layout-leave-active {
-  transition: transform 0.5s, opacity 0.5s;
-}
-
-.layout-enter-from {
-  transform: translateY(-20%);
-  opacity: 0;
-}
-
-.layout-leave-to {
-  transform: translateY(-20%);
-  opacity: 0;
-}
-*/
+.layout-leave-active,
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 150ms;
 }
 
+.page-enter-from,
+.page-leave-to,
+.layout-enter-from,
+.layout-leave-to,
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

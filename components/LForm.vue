@@ -18,19 +18,7 @@
           </Transition>
         </div>
 
-        <!-- <LSubmit :loading="loading" :button-text="buttonText" /> -->
-
-        <!--  -->
-        <input
-          type="submit"
-          :value="loading ? 'Loading...' : buttonText"
-          :disabled="loading"
-          class="text-blue text-off_white transition-all cursor-pointer font-semibold bg-accent shadow-md outline-none ring-transparent ring-2 ring-inset rounded-lg px-5 py-2 hover:shadow-lg focus-visible:shadow-lg focus-visible:ring-off_white/80"
-          :class="loading ? '!cursor-default opacity-75' : ''"
-        />
-        <!-- 
-          
-         -->
+        <LSubmit :loading="loading" :button-text="buttonText" />
       </div>
     </div>
   </form>

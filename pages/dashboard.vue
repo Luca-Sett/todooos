@@ -1,23 +1,3 @@
-<!-- <template>
-  <div class="overflow-hidden">
-    <Transition name="fade" mode="out-in">
-      <div v-if="dataLoaded">
-        <div class="bg-light-background min-h-screen flex gap-10 p-10">
-          <DashboardSidebar />
-          <div class="py-6">
-            <div>{{ name }}</div>
-            <NuxtPage />
-          </div>
-        </div>
-      </div>
-
-      <div v-else class="h-screen grid place-items-center">
-        <Heading>Loading...</Heading>
-      </div>
-    </Transition>
-  </div>
-</template> -->
-
 <!-- <script setup>
 definePageMeta({
   middleware: "dashboard",
@@ -55,17 +35,14 @@ onMounted(async () => {
 </script> -->
 
 <template>
-  <div>
+  <div class="h-full">
     <NuxtPage />
   </div>
 </template>
 
 <script setup>
-console.log("dashboard setup");
-onMounted(() => console.log("dashboard mounted"));
-
 definePageMeta({
-  layout: "dashboard-layout",
   middleware: "dashboard",
+  layout: "dashboard",
 });
 </script>

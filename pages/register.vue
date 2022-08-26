@@ -70,8 +70,8 @@ import {
 } from "@vuelidate/validators";
 
 definePageMeta({
-  layout: "marketing-layout",
   middleware: "guest",
+  layout: "marketing",
 });
 
 const registerData = ref({
