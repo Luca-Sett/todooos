@@ -1,10 +1,10 @@
 <template>
   <div class="min-h-[200vh]">
-    <Heading>home</Heading>
-    <Info>
+    <LHeading>home</LHeading>
+    <LInfo>
       This is a temporary home page. It will eventually advertise this amazing
       app.
-    </Info>
+    </LInfo>
   </div>
 </template>
 

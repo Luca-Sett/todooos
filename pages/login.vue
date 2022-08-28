@@ -1,10 +1,10 @@
 <template>
   <div>
-    <Heading>
+    <LHeading>
       log in to your <span class="text-accent">todooos</span> account
-    </Heading>
+    </LHeading>
 
-    <Info> Ready to get stuff done? </Info>
+    <LInfo> Ready to get stuff done? </LInfo>
 
     <LForm
       @submit="login"
@@ -31,6 +31,13 @@
         autocomplete="current-password"
         type="password"
       />
+
+      <template #footer>
+        <div class="col-span-full text-center">
+          Don't have an account?
+          <LButtonLink to="/register" tight tertiary>register</LButtonLink>
+        </div>
+      </template>
     </LForm>
   </div>
 </template>

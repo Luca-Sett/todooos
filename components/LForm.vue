@@ -2,24 +2,26 @@
   <form
     @submit.prevent="emit('submit')"
     novalidate
-    class="max-w-form mx-auto bg-blue rounded-3xl p-6 shadow-lg"
+    class="mx-auto max-w-form rounded-3xl bg-foreground px-4 pt-5 pb-4 shadow-lg sm:px-5 md:px-6"
   >
     <div
-      class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-6 gap-y-2"
+      class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-6 gap-y-3"
     >
       <slot />
 
-      <div class="flex flex-col gap-1 col-span-full">
-        <div class="text-error h-6">
-          <Transition name="fade">
-            <div v-if="errorMessage">
-              {{ errorMessage }}
-            </div>
-          </Transition>
-        </div>
+      <div class="col-span-full mt-6 flex flex-col gap-1">
+        <Transition name="fade">
+          <div v-if="errorMessage" class="mb-1 font-medium text-error">
+            {{ errorMessage }}
+          </div>
+        </Transition>
 
-        <LSubmit :loading="loading" :button-text="buttonText" />
+        <LButtonLink primary submit button :loading="loading">
+          {{ buttonText }}
+        </LButtonLink>
       </div>
+
+      <slot name="footer" />
     </div>
   </form>
 </template>

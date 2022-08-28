@@ -1,54 +1,50 @@
 <template>
   <NuxtLayout>
-    <NuxtLoadingIndicator class="!bg-none !bg-accent" />
+    <NuxtLoadingIndicator class="!bg-accent !bg-none" />
     <NuxtPage />
   </NuxtLayout>
 </template>
 
 <script setup>
-const user = useSupabaseUser();
-
-watch(user, (newUser, oldUser) => {
-  if (newUser && !oldUser) return navigateTo("/dashboard/view-todooos");
-  if (!newUser && oldUser) return navigateTo("/");
-});
-
 useHead({
   titleTemplate: (title) => (title ? `${title} - Todooos.` : "Todooos."),
   htmlAttrs: {
     lang: "en",
   },
 });
+
+const user = useSupabaseUser();
+watch(user, (newUser, oldUser) => {
+  if (newUser && !oldUser) return navigateTo("/dashboard/view-todooos");
+  if (!newUser && oldUser) return navigateTo("/");
+});
 </script>
 
 <style lang="postcss">
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,500,0,0");
 
 body {
-  @apply bg-dark_blue;
-  @apply text-off_white;
+  @apply bg-background;
+  @apply text-text;
   overflow-y: overlay;
   overflow-x: hidden;
 }
 
 ::selection {
-  @apply bg-accent/30;
-  @apply rounded;
+  @apply bg-accent/20;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
   @apply bg-transparent;
-  padding: 2px;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-off_white/20;
-  @apply bg-accent/40;
+  @apply bg-text;
   border-radius: 4px;
 }
 
@@ -58,7 +54,7 @@ body {
 .layout-leave-active,
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 150ms;
+  transition: opacity 300ms;
 }
 
 .page-enter-from,

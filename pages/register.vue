@@ -1,15 +1,14 @@
 <template>
   <div>
-    <Heading>
+    <LHeading>
       create your <span class="text-accent">todooos</span> account
-    </Heading>
+    </LHeading>
 
-    <Info>
+    <LInfo>
       After you're registered, you can use your
-      <span class="font-bold text-accent">todooos</span> account to keep track
-      of your personal tasks or join your organisation to turbocharge your
-      productivity.
-    </Info>
+      <span class="text-accent">todooos</span> account to keep track of your
+      personal tasks or join your organisation to turbocharge your productivity.
+    </LInfo>
 
     <LForm
       @submit="register"
@@ -55,6 +54,13 @@
         autocomplete="new-password"
         type="password"
       />
+
+      <template #footer>
+        <div class="col-span-full text-center">
+          Already have an account?
+          <LButtonLink to="/login" tight tertiary>log in</LButtonLink>
+        </div>
+      </template>
     </LForm>
   </div>
 </template>
@@ -79,7 +85,8 @@ useHead({
   meta: [
     {
       name: "description",
-      content: "Register your free todooos account to turbocharge your productivty.",
+      content:
+        "Register your free todooos account to turbocharge your productivty.",
     },
   ],
 });

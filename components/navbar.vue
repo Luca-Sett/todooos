@@ -1,24 +1,30 @@
 <template>
   <div>
-    <div class="bg-blue shadow-lg fixed w-full">
+    <div class="fixed w-full bg-foreground shadow-lg">
       <nav
-        class="h-navbar max-w-container px-container mx-auto flex justify-between items-center box-content"
+        class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
       >
-        <NuxtLink to="/" class="font-patua text-logo">
+        <LButtonLink to="/" tight class="font-patua text-logo">
           <span class="text-accent">todooos</span>
           <span>.</span>
-        </NuxtLink>
+        </LButtonLink>
 
-        <div class="font-semibold gap-10 items-center hidden lg:flex">
-          <LLink to="/" class="tertiary">home</LLink>
-          <LLink to="/plans" class="tertiary">plans</LLink>
-          <LLink to="/login" class="secondary">login</LLink>
-          <LLink to="/register" class="primary">register</LLink>
+        <div class="hidden items-center gap-10 lg:flex">
+          <LButtonLink to="/" quaternary class="links">home</LButtonLink>
+          <LButtonLink to="/plans" quaternary class="links">plans</LButtonLink>
+          <LButtonLink to="/login" secondary>login</LButtonLink>
+          <LButtonLink to="/register" primary>register</LButtonLink>
         </div>
 
-        <LButton @click="isNavDrawerOpen = true" class="lg:hidden">
+        <LButtonLink
+          quaternary
+          tight
+          button
+          @click="isNavDrawerOpen = true"
+          class="grid place-items-center lg:hidden"
+        >
           <span class="material-symbols-rounded !text-logo">menu</span>
-        </LButton>
+        </LButtonLink>
       </nav>
     </div>
 
@@ -26,19 +32,24 @@
       <Transition name="drop">
         <div
           v-if="isNavDrawerOpen"
-          class="lg:hidden z-[9999] fixed bg-light_blue/80 top-0 h-full w-full grid place-items-center"
+          @click="close"
+          class="fixed top-0 z-[9999] grid h-full w-full place-items-center bg-foreground/60 lg:hidden"
         >
           <div class="flex flex-col place-items-center text-heading">
-            <LButton @click="close" class="mb-8">
+            <LButtonLink quaternary button class="mb-8">
               <span class="material-symbols-rounded !text-logo">close</span>
-            </LButton>
+            </LButtonLink>
 
-            <LLink @click="close" to="/" class="tertiary">home</LLink>
-            <LLink @click="close" to="/plans" class="tertiary">plans</LLink>
-            <LLink @click="close" to="/login" class="tertiary">login</LLink>
-            <LLink @click="close" to="/register" class="tertiary">
+            <LButtonLink quaternary to="/" class="links">home</LButtonLink>
+            <LButtonLink quaternary to="/plans" class="links">
+              plans
+            </LButtonLink>
+            <LButtonLink quaternary to="/login" class="links">
+              login
+            </LButtonLink>
+            <LButtonLink quaternary to="/register" class="links">
               register
-            </LLink>
+            </LButtonLink>
           </div>
         </div>
       </Transition>
@@ -51,7 +62,7 @@ const isNavDrawerOpen = ref(false);
 const close = () => (isNavDrawerOpen.value = false);
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 .drop-enter-active {
   transition: transform 0.3s ease-out;
 }
@@ -62,5 +73,9 @@ const close = () => (isNavDrawerOpen.value = false);
 .drop-enter-from,
 .drop-leave-to {
   transform: translateY(-100%);
+}
+
+.links.router-link-active {
+  @apply text-accent;
 }
 </style>

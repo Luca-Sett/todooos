@@ -1,15 +1,15 @@
 <template>
-  <div v-if="loading" class="h-screen grid place-items-center px-4">
+  <div v-if="loading" class="grid h-screen place-items-center px-4">
     <div class="text-center">
       <div class="mb-2 grid place-items-center">
-        <LoadingSpinner class="text-accent w-8 h-8" />
+        <LLoadingSpinner class="h-8 w-8 text-accent" />
       </div>
       Fetching your todooos...
     </div>
   </div>
 
   <div v-else>
-    <div class="min-h-screen hidden lg:flex">
+    <div class="hidden min-h-screen lg:flex">
       <Sidebar class="shrink-0" />
       <div class="w-full p-10">
         <slot />
@@ -19,7 +19,7 @@
     <div class="min-h-screen lg:hidden">
       <SidebarSmall />
       <div
-        class="max-w-container px-container mx-auto box-content pb-16 pt-[calc(4rem_+_var(--navbar-height))]"
+        class="mx-auto box-content max-w-container px-container pb-20 pt-[calc(min(8%,5rem)_+_var(--navbar-height))]"
       >
         <slot />
       </div>

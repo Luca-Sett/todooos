@@ -1,9 +1,9 @@
 <template>
   <NuxtLink
-    class="transition-all flex items-center justify-between pl-5 pr-2 py-2 rounded-lg outline-none ring-transparent ring-2 ring-inset focus-visible:ring-off_white/40 focus-visible:bg-dark_blue focus-visible:shadow-md hover:bg-dark_blue hover:shadow-md"
+    class="flex items-center justify-between rounded-lg py-2 pl-5 pr-2 outline-none ring-2 ring-inset ring-transparent transition-all focus-visible:ring-text"
   >
     <slot />
-    <span class="material-symbols-rounded transition-opacity opacity-0">
+    <span class="material-symbols-rounded opacity-0 transition-opacity">
       keyboard_arrow_right
     </span>
   </NuxtLink>
@@ -11,11 +11,14 @@
 
 <style scoped lang="postcss">
 .router-link-active {
-  @apply font-semibold;
+  @apply font-medium;
   @apply bg-accent;
-  @apply text-white;
-  @apply shadow-md;
-  @apply focus-visible:ring-off_white/80;
+  @apply shadow-lg;
+}
+
+a:not(.router-link-active) {
+  @apply hover:text-accent;
+  @apply focus-visible:text-accent;
 }
 
 .router-link-active span {

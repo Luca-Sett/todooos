@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-1">
-    <label :for="_for" class="font-bold text-pale-white w-max">
+    <label :for="_for" class="w-max font-medium">
       {{ label }}
     </label>
 
@@ -12,17 +12,15 @@
       :id="_for"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
-      class="transition-all bg-dark_blue shadow-md appearance-none outline-none ring-transparent ring-2 ring-inset rounded-lg px-5 py-2 hover:shadow-lg focus:shadow-lg focus:ring-off_white/40"
-      :class="v$.$error ? 'ring-error focus:ring-error' : ''"
+      class="appearance-none rounded-xl border-2 border-transparent bg-foreground-alt px-[18px] py-[6px] shadow-md outline-none transition-all hover:shadow-lg focus:border-b-accent focus:shadow-lg"
+      :class="v$.$error ? 'border-b-error focus:border-b-error' : ''"
     />
 
-    <div class="text-error">
-      <Transition name="fade">
-        <div v-if="v$.$error">
-          {{ v$.$errors[0].$message }}
-        </div>
-      </Transition>
-    </div>
+    <Transition name="fade">
+      <div v-if="v$.$error" class="font-medium text-error">
+        {{ v$.$errors[0].$message }}
+      </div>
+    </Transition>
   </div>
 </template>
 

@@ -3,12 +3,17 @@ module.exports = {
   theme: {
     colors: {
       transparent: "transparent",
-      dark_blue: "#222D41",
-      blue: "#2E384F",
-      light_blue: "#3B4866",
-      accent: "#F2B321",
-      off_white: "#FFFFFFE6",
-      white: "#FFFFFF",
+      // dark_blue: "#222D41",
+      // blue: "#2E384F",
+      // light_blue: "#3B4866",
+      // accent: "#F2B321",
+      // off_white: "#FFFFFFE6",
+      // white: "#FFFFFF",
+      background: "#151619",
+      foreground: "#212327",
+      "foreground-alt": "#111113",
+      accent: "#e3ae29",
+      text: "#efefef",
       error: "#F74F4F",
     },
     fontFamily: {

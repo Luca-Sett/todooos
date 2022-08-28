@@ -1,17 +1,27 @@
 <template>
   <div>
-    <div class="bg-blue shadow-lg fixed w-full">
+    <div class="fixed w-full bg-foreground shadow-lg">
       <nav
-        class="h-navbar max-w-container px-container mx-auto flex justify-between items-center box-content"
+        class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
       >
-        <NuxtLink to="/dashboard/view-todooos" class="font-patua text-logo">
+        <LButtonLink
+          to="/dashboard/view-todooos"
+          tight
+          class="font-patua text-logo"
+        >
           <span class="text-accent">todooos</span>
           <span>.</span>
-        </NuxtLink>
+        </LButtonLink>
 
-        <LButton @click="isSidebarOpen = true">
+        <LButtonLink
+          quaternary
+          tight
+          button
+          @click="isSidebarOpen = true"
+          class="grid place-items-center lg:hidden"
+        >
           <span class="material-symbols-rounded !text-logo">menu</span>
-        </LButton>
+        </LButtonLink>
       </nav>
     </div>
 
@@ -19,7 +29,7 @@
       <Transition name="fade">
         <div
           v-if="isSidebarOpen"
-          class="lg:hidden z-[9998] fixed top-0 h-full w-full bg-dark_blue/80"
+          class="fixed top-0 z-[9998] h-full w-full bg-background/50 lg:hidden"
           @click="close"
         ></div>
       </Transition>
@@ -27,21 +37,21 @@
       <Transition name="slide-in">
         <div
           v-if="isSidebarOpen"
-          class="lg:hidden z-[9999] fixed top-0 h-full bg-blue shadow-lg w-72 rounded-r-3xl flex flex-col justify-between p-5 overflow-y-scroll max-h-full"
+          class="fixed top-0 z-[9999] flex h-full max-h-full w-72 flex-col justify-between overflow-y-scroll rounded-r-3xl bg-foreground p-5 lg:hidden"
         >
           <div class="flex flex-col gap-10">
-            <div class="text-center font-patua text-logo">
-              <NuxtLink
-                @click="close"
-                to="/dashboard/view-todooos"
-                class="text-accent"
-              >
-                todooos</NuxtLink
-              >.
-            </div>
+            <LButtonLink
+              to="/dashboard/view-todooos"
+              @click="close"
+              tight
+              class="mx-auto w-max font-patua text-logo"
+            >
+              <span class="text-accent">todooos</span>
+              <span>.</span>
+            </LButtonLink>
 
             <div>
-              <div class="font-bold text-off_white mb-2">TODOOOS</div>
+              <div class="mb-2 font-medium">TODOOOS</div>
               <div class="flex flex-col gap-2">
                 <SidebarLink @click="close" to="/dashboard/view-todooos">
                   view todooos
@@ -56,7 +66,7 @@
             </div>
 
             <div>
-              <div class="font-bold text-off_white mb-2">PROFILE</div>
+              <div class="mb-2 font-medium">PROFILE</div>
               <div class="flex flex-col gap-2">
                 <SidebarLink @click="close" to="/dashboard/test3">
                   my profile
@@ -71,9 +81,9 @@
             </div>
           </div>
 
-          <LButton class="w-full mt-10" @click="signOut">
+          <LButtonLink secondary button class="mt-10" @click="signOut">
             {{ name }} | Sign out
-          </LButton>
+          </LButtonLink>
         </div>
       </Transition>
     </Teleport>

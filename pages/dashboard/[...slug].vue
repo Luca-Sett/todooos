@@ -1,8 +1,8 @@
 <template>
-  <div class="grid place-items-center h-full">
+  <div class="grid h-full place-items-center">
     <div class="text-center">
-      <Heading>uh oh, <span class="text-accent">404</span> error 😭</Heading>
-      <Info>This page can't be found.</Info>
+      <LHeading>uh oh, <span class="text-accent">404</span> error 😭</LHeading>
+      <LInfo>This page can't be found.</LInfo>
     </div>
   </div>
 </template>

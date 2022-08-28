@@ -7,3 +7,9 @@
     --navbar-height: 80px;
   }
 }
+
+@layer utilities {
+  .overflow-y-overlay {
+    overflow-y: overlay;
+  }
+}
