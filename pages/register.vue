@@ -1,13 +1,11 @@
 <template>
   <div>
-    <LHeading>
-      create your <span class="text-accent">todooos</span> account
-    </LHeading>
+    <LHeading> create your <LAccent>todooos</LAccent> account </LHeading>
 
     <LInfo>
       After you're registered, you can use your
-      <span class="text-accent">todooos</span> account to keep track of your
-      personal tasks or join your organisation to turbocharge your productivity.
+      <LAccent>todooos</LAccent> account to keep track of your personal tasks or
+      join your organisation to turbocharge your productivity.
     </LInfo>
 
     <LForm

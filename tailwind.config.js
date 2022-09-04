@@ -1,20 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class", '[class="light"]'],
   theme: {
     colors: {
       transparent: "transparent",
-      // dark_blue: "#222D41",
-      // blue: "#2E384F",
-      // light_blue: "#3B4866",
-      // accent: "#F2B321",
-      // off_white: "#FFFFFFE6",
-      // white: "#FFFFFF",
-      background: "#151619",
-      foreground: "#212327",
+      // dark mode
+      background: "#15161a",
+      foreground: "#222327",
       "foreground-alt": "#111113",
-      accent: "#e3ae29",
+      accent: "#e3ae2a",
       text: "#efefef",
-      error: "#F74F4F",
+      error: "#f74f4f",
+      // light mode
+      "lm-background": "#f4f8f8",
+      "lm-foreground": "#fdfdfd",
+      "lm-foreground-alt": "#ededed",
+      "lm-accent": "#f7b819",
+      "lm-text": "#323232",
+      "lm-error": "#f74f4f",
     },
     fontFamily: {
       sans: ["Poppins", "sans-serif"],

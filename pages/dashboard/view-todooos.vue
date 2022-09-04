@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <LHeading>view your <span class="text-accent">todooos</span></LHeading>
+  <div class="h-[200vh]">
+    <LHeading>view your <LAccent>todooos</LAccent></LHeading>
     <LInfo>
       Placeholder content for viewing your todooos. Logged in user is
-      <span class="text-accent">{{ name }}</span
+      <LAccent>{{ name }}</LAccent
       >.
     </LInfo>
   </div>

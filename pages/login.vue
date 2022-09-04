@@ -1,10 +1,8 @@
 <template>
   <div>
-    <LHeading>
-      log in to your <span class="text-accent">todooos</span> account
-    </LHeading>
+    <LHeading>log in to your <LAccent>todooos</LAccent> account</LHeading>
 
-    <LInfo> Ready to get stuff done? </LInfo>
+    <LInfo>Ready to get stuff done?</LInfo>
 
     <LForm
       @submit="login"

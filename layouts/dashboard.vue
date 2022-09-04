@@ -2,9 +2,11 @@
   <div v-if="loading" class="grid h-screen place-items-center px-4">
     <div class="text-center">
       <div class="mb-2 grid place-items-center">
-        <LLoadingSpinner class="h-8 w-8 text-accent" />
+        <LAccent>
+          <LLoadingSpinner class="w-8" />
+        </LAccent>
       </div>
-      Fetching your todooos...
+      Fetching your <LAccent>todooos</LAccent>...
     </div>
   </div>
 

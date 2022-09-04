@@ -1,6 +1,6 @@
 <template>
   <div class="grid place-items-center">
-    <LHeading>uh oh, <span class="text-accent">404</span> error 😭</LHeading>
+    <LHeading>uh oh, <LAccent>404</LAccent> error 😭</LHeading>
     <LInfo>This page can't be found.</LInfo>
   </div>
 </template>

@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxtjs/supabase", "@vueuse/nuxt"],
   build: {
     transpile: ["@headlessui/vue"],
   },

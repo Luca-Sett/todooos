@@ -25,9 +25,12 @@ watch(user, (newUser, oldUser) => {
 @import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@40,500,0,0");
 
+html {
+  --navbar-height: 80px;
+}
+
 body {
-  @apply bg-background;
-  @apply text-text;
+  @apply bg-background text-text transition-colors dark:bg-lm-background dark:text-lm-text;
   overflow-y: overlay;
   overflow-x: hidden;
 }

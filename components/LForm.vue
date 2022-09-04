@@ -2,7 +2,7 @@
   <form
     @submit.prevent="emit('submit')"
     novalidate
-    class="mx-auto max-w-form rounded-3xl bg-foreground px-4 pt-5 pb-4 shadow-lg sm:px-5 md:px-6"
+    class="mx-auto max-w-form rounded-3xl bg-foreground px-4 pt-5 pb-4 shadow-lg dark:bg-lm-foreground sm:px-5 md:px-6"
   >
     <div
       class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-6 gap-y-3"

@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="fixed w-full bg-foreground shadow-lg">
+    <div
+      class="fixed w-full border-b-2 border-foreground bg-background/80 backdrop-blur dark:border-lm-error dark:bg-lm-background/60"
+    >
       <nav
         class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
       >
@@ -9,7 +11,7 @@
           tight
           class="font-patua text-logo"
         >
-          <span class="text-accent">todooos</span>
+          <LAccent>todooos</LAccent>
           <span>.</span>
         </LButtonLink>
 
