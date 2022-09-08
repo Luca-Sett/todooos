@@ -1,5 +1,5 @@
 <template>
-  <span class="text-accent transition-colors dark:text-lm-accent">
+  <span class="text-accent">
     <slot />
   </span>
 </template>

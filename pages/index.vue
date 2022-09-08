@@ -5,12 +5,6 @@
       This is a temporary home page. It will eventually advertise this amazing
       app.
     </LInfo>
-    <div class="flex gap-2">
-      <LButtonLink primary button>primary</LButtonLink>
-      <LButtonLink secondary button>secondary</LButtonLink>
-      <LButtonLink tertiary button>tertiary</LButtonLink>
-      <LButtonLink quaternary button>quaternary</LButtonLink>
-    </div>
   </div>
 </template>
 

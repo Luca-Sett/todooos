@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="fixed z-50 w-screen border-b-2 border-foreground bg-background/70 backdrop-blur transition-colors dark:border-lm-foreground-alt dark:bg-lm-background/50"
+      class="fixed z-50 w-screen border-b-2 border-foreground bg-background/70 backdrop-blur"
     >
       <nav
         class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
@@ -16,21 +16,17 @@
           <LButtonLink quaternary to="/plans" class="links">plans</LButtonLink>
           <LButtonLink secondary to="/login">login</LButtonLink>
           <LButtonLink primary to="/register">register</LButtonLink>
-          <LDarkToggle />
         </div>
 
-        <div class="flex gap-2 lg:hidden">
-          <LDarkToggle />
-          <LButtonLink
-            quaternary
-            tight
-            button
-            @click="isNavDrawerOpen = true"
-            class="grid place-items-center"
-          >
-            <span class="material-symbols-rounded !text-logo">menu</span>
-          </LButtonLink>
-        </div>
+        <LButtonLink
+          quaternary
+          tight
+          button
+          @click="isNavDrawerOpen = true"
+          class="grid place-items-center lg:hidden"
+        >
+          <span class="material-symbols-rounded !text-logo">menu</span>
+        </LButtonLink>
       </nav>
     </div>
 
@@ -39,7 +35,7 @@
         <div
           v-if="isNavDrawerOpen"
           @click="close"
-          class="fixed top-0 z-[9999] grid h-full w-full place-items-center bg-foreground/60 dark:bg-lm-foreground/70 lg:hidden"
+          class="fixed top-0 z-[9999] grid h-full w-full place-items-center bg-foreground/60 lg:hidden"
         >
           <div class="flex flex-col place-items-center text-heading">
             <LButtonLink quaternary button class="mb-8">

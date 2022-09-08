@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="fixed w-full border-b-2 border-foreground bg-background/80 backdrop-blur dark:border-lm-error dark:bg-lm-background/60"
+      class="fixed w-full border-b-2 border-foreground bg-background/80 backdrop-blur"
     >
       <nav
         class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
@@ -39,53 +39,9 @@
       <Transition name="slide-in">
         <div
           v-if="isSidebarOpen"
-          class="fixed top-0 z-[9999] flex h-full max-h-full w-72 flex-col justify-between overflow-y-scroll rounded-r-3xl bg-foreground p-5 lg:hidden"
+          class="overflow-y-overlay fixed top-0 z-[9999] h-screen lg:hidden"
         >
-          <div class="flex flex-col gap-10">
-            <LButtonLink
-              to="/dashboard/view-todooos"
-              @click="close"
-              tight
-              class="mx-auto w-max font-patua text-logo"
-            >
-              <span class="text-accent">todooos</span>
-              <span>.</span>
-            </LButtonLink>
-
-            <div>
-              <div class="mb-2 font-medium">TODOOOS</div>
-              <div class="flex flex-col gap-2">
-                <SidebarLink @click="close" to="/dashboard/view-todooos">
-                  view todooos
-                </SidebarLink>
-                <SidebarLink @click="close" to="/dashboard/test1">
-                  add todooo
-                </SidebarLink>
-                <SidebarLink @click="close" to="/dashboard/test2">
-                  view archived todooos
-                </SidebarLink>
-              </div>
-            </div>
-
-            <div>
-              <div class="mb-2 font-medium">PROFILE</div>
-              <div class="flex flex-col gap-2">
-                <SidebarLink @click="close" to="/dashboard/test3">
-                  my profile
-                </SidebarLink>
-                <SidebarLink @click="close" to="/dashboard/test4">
-                  my organisation
-                </SidebarLink>
-                <SidebarLink @click="close" to="/dashboard/test5">
-                  my preferences
-                </SidebarLink>
-              </div>
-            </div>
-          </div>
-
-          <LButtonLink secondary button class="mt-10" @click="signOut">
-            {{ name }} | Sign out
-          </LButtonLink>
+          <LSidebar @action="close" class="min-h-screen rounded-r-3xl" />
         </div>
       </Transition>
     </Teleport>
@@ -111,10 +67,10 @@ const signOut = async () => {
 
 <style scoped>
 .slide-in-enter-active {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.2s ease-out;
 }
 .slide-in-leave-active {
-  transition: transform 0.3s ease-in;
+  transition: transform 0.2s ease-in;
 }
 
 .slide-in-enter-from,

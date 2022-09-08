@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    class="flex items-center justify-between rounded-lg py-2 pl-5 pr-2 outline-none ring-2 ring-inset ring-transparent transition-all focus-visible:ring-text"
+    class="flex items-center justify-between rounded-lg py-2 pl-5 pr-3 outline-none ring-2 ring-inset ring-transparent transition-all focus-visible:ring-text"
   >
     <slot />
     <span class="material-symbols-rounded opacity-0 transition-opacity">
@@ -13,7 +13,6 @@
 .router-link-active {
   @apply font-medium;
   @apply bg-accent;
-  @apply shadow-lg;
 }
 
 a:not(.router-link-active) {

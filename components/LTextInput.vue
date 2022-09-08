@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-1">
-    <label :for="_for" class="w-max font-semibold opacity-80">
+    <label :for="_for" class="w-max font-semibold text-text/80">
       {{ label }}
     </label>
 
@@ -12,7 +12,7 @@
       :id="_for"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
-      class="appearance-none rounded-xl border-2 border-transparent bg-foreground-alt px-[18px] py-[6px] outline-none transition-all focus:border-b-accent dark:bg-lm-foreground-alt dark:focus:border-b-lm-accent"
+      class="appearance-none rounded-xl border-2 border-transparent bg-foreground-alt px-[18px] py-[6px] outline-none transition-all focus:border-b-accent"
       :class="v$.$error ? 'border-b-error focus:border-b-error' : ''"
     />
 

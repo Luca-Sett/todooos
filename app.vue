@@ -30,7 +30,7 @@ html {
 }
 
 body {
-  @apply bg-background text-text transition-colors dark:bg-lm-background dark:text-lm-text;
+  @apply bg-background text-text;
   overflow-y: overlay;
   overflow-x: hidden;
 }
@@ -47,8 +47,12 @@ body {
   @apply bg-transparent;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-text;
+  @apply bg-accent/25;
   border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb,
+.white-scroll::-webkit-scrollbar-thumb {
+  @apply bg-text;
 }
 
 .page-enter-active,

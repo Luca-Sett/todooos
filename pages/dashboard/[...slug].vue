@@ -1,9 +1,12 @@
 <template>
-  <div class="grid h-full place-items-center">
-    <div class="text-center">
-      <LHeading>uh oh, <LAccent>404</LAccent> error 😭</LHeading>
-      <LInfo>This page can't be found.</LInfo>
-    </div>
+  <div class="grid place-items-center text-center">
+    <LHeading>uh oh, you've found the <LAccent>404</LAccent> page 😭</LHeading>
+    <LInfo class="mt-2">
+      Try checking the URL or
+      <LButtonLink tight tertiary to="/dashboard/view-todooos">
+        go home.
+      </LButtonLink>
+    </LInfo>
   </div>
 </template>
 

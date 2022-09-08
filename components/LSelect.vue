@@ -1,0 +1,76 @@
+<template>
+  <Listbox>
+    <div class="relative">
+      <Transition name="dropdown">
+        <ListboxOptions
+          class="absolute top-5 flex w-full flex-col gap-1.5 rounded-lg bg-background p-1.5 pt-[1.625rem] shadow-xl outline-none"
+        >
+          <ListboxOption
+            v-for="option in options"
+            :key="option"
+            :value="option"
+            v-slot="{ active, selected }"
+          >
+            <div
+              class="cursor-pointer rounded-md py-1 px-3 transition-colors"
+              :class="{
+                'bg-foreground': active,
+                'bg-accent/[15%] text-accent': selected,
+                'bg-accent/25': selected && active,
+              }"
+            >
+              <span>{{ option }}</span>
+            </div>
+          </ListboxOption>
+        </ListboxOptions>
+      </Transition>
+
+      <ListboxButton
+        v-slot="{ value, open }"
+        class="relative z-10 flex w-full justify-between rounded-lg bg-foreground-alt py-2 pl-5 pr-3 font-medium outline-none ring-2 ring-inset ring-transparent transition-all focus-visible:ring-text"
+      >
+        <span>{{ value }}</span>
+        <span
+          class="material-symbols-rounded transition-transform duration-300"
+          :class="open ? 'rotate-180' : ''"
+        >
+          keyboard_arrow_down
+        </span>
+      </ListboxButton>
+    </div>
+  </Listbox>
+</template>
+
+<script setup>
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
+} from "@headlessui/vue";
+
+defineProps(["options"]);
+</script>
+
+<style scoped lang="postcss">
+ul:focus-visible ~ button {
+  @apply ring-text;
+}
+
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all 0.2s ease;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  scale: 0.9;
+  translate: 0 -20px;
+}
+.dropdown-enter-to,
+.dropdown-leave-from {
+  opacity: 1;
+  scale: 1;
+  translate: 0 0;
+}
+</style>
