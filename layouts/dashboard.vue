@@ -23,19 +23,21 @@
   </div>
 
   <div v-else>
-    <div class="hidden lg:flex">
-      <div class="overflow-y-overlay h-screen shrink-0 py-5 pl-5">
-        <LSidebar class="min-h-[calc(100vh-2.5rem)] rounded-3xl" />
-      </div>
-      <div class="white-scroll h-screen w-full overflow-y-auto p-14">
+    <div class="lg:hidden">
+      <SidebarSmall />
+      <div
+        class="box-content px-container pb-20 pt-[calc(min(8%,5rem)_+_var(--navbar-height))]"
+      >
         <slot />
       </div>
     </div>
 
-    <div class="lg:hidden">
-      <SidebarSmall />
+    <div class="hidden lg:flex">
+      <div class="overflow-y-overlay h-screen shrink-0 py-5 pl-5">
+        <LSidebar class="min-h-[calc(100vh-2.5rem)] rounded-3xl" />
+      </div>
       <div
-        class="mx-auto box-content max-w-container px-container pb-20 pt-[calc(min(8%,5rem)_+_var(--navbar-height))]"
+        class="white-scroll mx-auto h-screen w-full max-w-container overflow-y-auto p-14"
       >
         <slot />
       </div>

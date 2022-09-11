@@ -12,13 +12,13 @@
       </LButtonLink>
 
       <div>
-        <div class="mb-2 font-medium text-text/80">ORGANISATION</div>
+        <div class="mb-2 font-semibold text-text/80">ORGANISATION</div>
         <LSelect :options="organisations" v-model="selectedOrganisation" />
       </div>
 
       <div class="flex flex-col gap-10">
         <div>
-          <div class="mb-2 font-medium text-text/80">TODOOOS</div>
+          <div class="mb-2 font-semibold text-text/80">TODOOOS</div>
           <div class="flex flex-col gap-2">
             <SidebarLink @click="emit('action')" to="/dashboard/view-todooos">
               view todooos
@@ -30,7 +30,7 @@
         </div>
 
         <div>
-          <div class="mb-2 font-medium text-text/80">PROFILE</div>
+          <div class="mb-2 font-semibold text-text/80">PROFILE</div>
           <div class="flex flex-col gap-2">
             <SidebarLink @click="emit('action')" to="/dashboard/test3">
               my profile
@@ -47,7 +47,7 @@
     </div>
 
     <LButtonLink
-      tertiary
+      secondary
       button
       @click="signOut"
       :loading="signOutLoading"

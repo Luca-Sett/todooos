@@ -1,12 +1,12 @@
 <template>
   <div>
     <div
-      class="fixed z-50 w-screen border-b-2 border-foreground bg-background/70 backdrop-blur"
+      class="fixed z-30 w-screen border-b-2 border-foreground bg-background/70 backdrop-blur"
     >
       <nav
         class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
       >
-        <LButtonLink to="/" tight class="font-patua text-logo">
+        <LButtonLink to="/" tight class="py-0 font-patua text-logo">
           <LAccent>todooos</LAccent>
           <span>.</span>
         </LButtonLink>
@@ -25,7 +25,7 @@
           @click="isNavDrawerOpen = true"
           class="grid place-items-center lg:hidden"
         >
-          <span class="material-symbols-rounded !text-logo">menu</span>
+          <LIcon class="!text-logo">menu</LIcon>
         </LButtonLink>
       </nav>
     </div>
@@ -39,7 +39,7 @@
         >
           <div class="flex flex-col place-items-center text-heading">
             <LButtonLink quaternary button class="mb-8">
-              <span class="material-symbols-rounded !text-logo">close</span>
+              <LIcon class="!text-logo">close</LIcon>
             </LButtonLink>
 
             <LButtonLink quaternary to="/" class="links">home</LButtonLink>

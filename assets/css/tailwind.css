@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer components {
   .overflow-y-overlay {
     overflow-y: overlay;
+  }
+
+  .focus-ring {
+    @apply outline-none ring-2 ring-transparent transition focus-visible:ring-text;
   }
 }

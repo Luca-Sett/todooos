@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  plugins: [require("@tailwindcss/line-clamp")],
   theme: {
     colors: {
       transparent: "transparent",

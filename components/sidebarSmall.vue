@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="fixed w-full border-b-2 border-foreground bg-background/80 backdrop-blur"
+      class="fixed z-50 w-full border-b-2 border-foreground bg-background/80 backdrop-blur"
     >
       <nav
         class="mx-auto box-content flex h-navbar max-w-container items-center justify-between px-container"
@@ -22,7 +22,7 @@
           @click="isSidebarOpen = true"
           class="grid place-items-center lg:hidden"
         >
-          <span class="material-symbols-rounded !text-logo">menu</span>
+          <LIcon class="!text-logo">menu</LIcon>
         </LButtonLink>
       </nav>
     </div>

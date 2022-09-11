@@ -3,7 +3,7 @@
     <LHeading>uh oh, you've found the <LAccent>404</LAccent> page 😭</LHeading>
     <LInfo class="mt-2">
       Try checking the URL or
-      <LButtonLink tight tertiary to="/dashboard/view-todooos">
+      <LButtonLink icon tertiary to="/dashboard/view-todooos">
         go home.
       </LButtonLink>
     </LInfo>

@@ -27,15 +27,15 @@
 
       <ListboxButton
         v-slot="{ value, open }"
-        class="relative z-10 flex w-full justify-between rounded-lg bg-foreground-alt py-2 pl-5 pr-3 font-medium outline-none ring-2 ring-inset ring-transparent transition-all focus-visible:ring-text"
+        class="focus-ring relative z-10 flex w-full justify-between rounded-lg bg-foreground-alt py-2 pl-5 pr-3 font-medium"
       >
         <span>{{ value }}</span>
-        <span
-          class="material-symbols-rounded transition-transform duration-300"
+        <LIcon
+          class="transition-transform duration-300"
           :class="open ? 'rotate-180' : ''"
         >
           keyboard_arrow_down
-        </span>
+        </LIcon>
       </ListboxButton>
     </div>
   </Listbox>

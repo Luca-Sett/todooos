@@ -3,7 +3,7 @@
     <LHeading>uh oh, you've found the <LAccent>404</LAccent> page 😭</LHeading>
     <LInfo class="mt-2">
       Try checking the URL or
-      <LButtonLink tight tertiary to="/">go home.</LButtonLink>
+      <LButtonLink icon tertiary to="/">go home.</LButtonLink>
     </LInfo>
   </div>
 </template>

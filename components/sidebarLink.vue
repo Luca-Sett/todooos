@@ -1,11 +1,9 @@
 <template>
   <NuxtLink
-    class="flex items-center justify-between rounded-lg py-2 pl-5 pr-3 outline-none ring-2 ring-inset ring-transparent transition-all focus-visible:ring-text"
+    class="focus-ring flex items-center justify-between rounded-lg py-2 pl-5 pr-3"
   >
     <slot />
-    <span class="material-symbols-rounded opacity-0 transition-opacity">
-      keyboard_arrow_right
-    </span>
+    <LIcon class="opacity-0 transition-opacity">keyboard_arrow_right</LIcon>
   </NuxtLink>
 </template>
 
