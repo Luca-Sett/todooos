@@ -1,9 +1,9 @@
 <template>
   <Listbox>
     <div class="relative">
-      <Transition name="dropdown">
+      <Transition name="dropdown" @enter="enter" @after-leave="leave">
         <ListboxOptions
-          class="absolute top-5 flex w-full flex-col gap-1.5 rounded-lg bg-background p-1.5 pt-[1.625rem] shadow-xl outline-none"
+          class="absolute top-5 z-20 flex w-full flex-col gap-1.5 rounded-lg bg-foreground-alt-2 p-1.5 pt-[1.625rem] shadow-xl outline-none"
         >
           <ListboxOption
             v-for="option in options"
@@ -27,7 +27,8 @@
 
       <ListboxButton
         v-slot="{ value, open }"
-        class="focus-ring relative z-10 flex w-full justify-between rounded-lg bg-foreground-alt py-2 pl-5 pr-3 font-medium"
+        ref="btn"
+        class="focus-ring relative flex w-full justify-between rounded-xl bg-foreground-alt-1 py-2 pl-5 pr-3 font-medium"
       >
         <span>{{ value }}</span>
         <LIcon
@@ -50,6 +51,10 @@ import {
 } from "@headlessui/vue";
 
 defineProps(["options"]);
+
+const btn = ref(null);
+const enter = () => btn.value?.el.classList.add("z-30");
+const leave = () => btn.value?.el.classList.remove("z-30");
 </script>
 
 <style scoped lang="postcss">
@@ -59,7 +64,7 @@ ul:focus-visible ~ button {
 
 .dropdown-enter-active,
 .dropdown-leave-active {
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
 }
 .dropdown-enter-from,
 .dropdown-leave-to {

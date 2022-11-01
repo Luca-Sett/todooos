@@ -30,12 +30,7 @@
               <slot name="title" />
             </DialogTitle>
 
-            <p>
-              Are you sure you want to deactivate your account? All of your data
-              will be permanently removed. This action cannot be undone.
-            </p>
-
-            <button @click="emit('close')">Close</button>
+            <slot />
           </DialogPanel>
         </TransitionChild>
       </div>

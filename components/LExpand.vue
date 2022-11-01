@@ -59,12 +59,13 @@ const leave = (element) => {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: height 0.5s;
+  transition: height 0.5s, opacity 0.3s;
   overflow: hidden;
 }
 
 .expand-enter-from,
 .expand-leave-to {
   height: 0;
+  opacity: 0;
 }
 </style>

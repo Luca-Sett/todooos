@@ -10,11 +10,11 @@
       <slot />
 
       <div class="col-span-full mt-6 flex flex-col gap-1">
-        <Transition name="fade">
+        <LExpand>
           <div v-if="errorMessage" class="mb-1 font-medium text-error">
             {{ errorMessage }}
           </div>
-        </Transition>
+        </LExpand>
 
         <LButtonLink primary submit button :loading="loading">
           {{ buttonText }}

@@ -47,12 +47,8 @@ body {
   @apply bg-transparent;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-accent/25;
+  @apply bg-text/80;
   border-radius: 4px;
-}
-body::-webkit-scrollbar-thumb,
-.white-scroll::-webkit-scrollbar-thumb {
-  @apply bg-text;
 }
 
 .page-enter-active,
@@ -71,5 +67,20 @@ body::-webkit-scrollbar-thumb,
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+}
+
+.list-leave-active {
+  position: absolute;
 }
 </style>

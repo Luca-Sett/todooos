@@ -32,7 +32,7 @@
         <div>
           <div class="mb-2 font-semibold text-text/80">PROFILE</div>
           <div class="flex flex-col gap-2">
-            <SidebarLink @click="emit('action')" to="/dashboard/test3">
+            <SidebarLink @click="emit('action')" to="/dashboard/my-profile">
               my profile
             </SidebarLink>
             <SidebarLink @click="emit('action')" to="/dashboard/test4">

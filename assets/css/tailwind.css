@@ -8,6 +8,6 @@
   }
 
   .focus-ring {
-    @apply outline-none ring-2 ring-transparent transition focus-visible:ring-text;
+    @apply outline-none ring-2 ring-inset ring-transparent transition focus-visible:ring-text/80;
   }
 }

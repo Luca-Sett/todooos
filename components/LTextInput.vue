@@ -7,20 +7,20 @@
     <input
       :value="modelValue"
       @input="handleInput"
-      @blur="v$.touch"
+      @blur="v$?.touch"
       :type="type"
       :id="_for"
       :placeholder="placeholder"
       :autocomplete="autocomplete"
-      class="appearance-none rounded-xl border-2 border-transparent bg-foreground-alt px-[18px] py-[6px] outline-none transition-all focus:border-b-accent"
-      :class="v$.$error ? 'border-b-error focus:border-b-error' : ''"
+      class="appearance-none rounded-xl border-2 border-transparent bg-foreground-alt-1 px-[18px] py-1.5 outline-none transition-all focus:border-b-accent"
+      :class="v$?.$error ? 'border-b-error focus:border-b-error' : ''"
     />
 
-    <Transition name="fade">
-      <div v-if="v$.$error" class="font-medium text-error">
+    <LExpand>
+      <div v-if="v$?.$error" class="font-medium text-error">
         {{ v$.$errors[0].$message }}
       </div>
-    </Transition>
+    </LExpand>
   </div>
 </template>
 
@@ -29,28 +29,26 @@ import { Validation } from "@vuelidate/core";
 
 const emit = defineEmits(["update:modelValue"]);
 
-interface Props {
-  modelValue: string;
-  v$: Validation;
-  _for: string;
-  label: string;
-  placeholder: string;
-  autocomplete?: string;
-  type?: string;
-}
-
 const {
   modelValue,
   v$,
   _for,
   label,
   placeholder,
-  autocomplete = false,
+  autocomplete = "",
   type = "text",
-} = defineProps<Props>();
+} = defineProps<{
+  modelValue: string;
+  v$?: Validation;
+  _for: string;
+  label: string;
+  placeholder: string;
+  autocomplete?: string;
+  type?: string;
+}>();
 
 const handleInput = (event) => {
   emit("update:modelValue", event.target.value);
-  v$.$touch();
+  v$?.$touch();
 };
 </script>

@@ -4,7 +4,7 @@
     <LInfo class="mt-2">
       Try checking the URL or
       <LButtonLink icon tertiary to="/dashboard/view-todooos">
-        go home.
+        view your todoos.
       </LButtonLink>
     </LInfo>
   </div>

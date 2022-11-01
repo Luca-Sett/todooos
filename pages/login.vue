@@ -66,7 +66,7 @@ const loginData = ref({
   password: "",
 });
 
-const rules = computed(() => ({
+const rules = {
   email: {
     required: helpers.withMessage("Please enter your email address", required),
     email: helpers.withMessage("Email address is incorrect", email),
@@ -74,7 +74,7 @@ const rules = computed(() => ({
   password: {
     required: helpers.withMessage("Please enter your password", required),
   },
-}));
+};
 
 const v$ = useVuelidate(rules, loginData);
 
@@ -91,7 +91,7 @@ const login = async () => {
   }
 
   try {
-    const { error: signInError } = await supabase.auth.signIn({
+    const { error: signInError } = await supabase.auth.signInWithPassword({
       email: loginData.value.email,
       password: loginData.value.password,
     });
