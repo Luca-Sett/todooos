@@ -59,7 +59,7 @@ useHead({
   ],
 });
 
-const supabase = useSupabaseClient();
+const authClient = useSupabaseAuthClient();
 
 const loginData = ref({
   email: "",
@@ -91,7 +91,7 @@ const login = async () => {
   }
 
   try {
-    const { error: signInError } = await supabase.auth.signInWithPassword({
+    const { error: signInError  } = await authClient.auth.signInWithPassword({
       email: loginData.value.email,
       password: loginData.value.password,
     });

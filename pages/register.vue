@@ -121,7 +121,9 @@ const rules = computed(() => ({
 }));
 
 const v$ = useVuelidate(rules, registerData);
+
 const supabase = useSupabaseClient();
+const authClient = useSupabaseAuthClient();
 
 const loading = ref(false);
 const errorMessage = ref("");
@@ -136,10 +138,15 @@ const register = async () => {
   }
 
   try {
-    const { user, error: signUpError } = await supabase.auth.signUp({
+    const {
+      data: { user },
+      error: signUpError,
+    } = await authClient.auth.signUp({
       email: registerData.value.email,
       password: registerData.value.password,
     });
+
+    console.log(user);
 
     if (signUpError) throw signUpError;
 

@@ -3,9 +3,11 @@
     <LHeading>uh oh, you've found the <LAccent>404</LAccent> page 😭</LHeading>
     <LInfo class="mt-2">
       Try checking the URL or
-      <LButtonLink icon tertiary to="/dashboard/view-todooos">
-        view your todoos.
-      </LButtonLink>
+      <NuxtLink
+        to="/dashboard/view-todooos"
+        class="underline decoration-dashed decoration-2 underline-offset-2 transition-colors hover:decoration-accent"
+        >view your todooos</NuxtLink
+      >.
     </LInfo>
   </div>
 </template>

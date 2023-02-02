@@ -57,7 +57,7 @@ body {
 .layout-leave-active,
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 300ms;
+  transition: opacity 200ms;
 }
 
 .page-enter-from,

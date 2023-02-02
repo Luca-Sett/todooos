@@ -2,8 +2,12 @@
   <div class="grid place-items-center text-center">
     <LHeading>uh oh, you've found the <LAccent>404</LAccent> page 😭</LHeading>
     <LInfo class="mt-2">
-      Try checking the URL or
-      <LButtonLink icon tertiary to="/">go home.</LButtonLink>
+      Try checking the URL or go
+      <NuxtLink
+        to="/"
+        class="underline decoration-dashed decoration-2 underline-offset-2 transition-colors hover:decoration-accent"
+        >home</NuxtLink
+      >.
     </LInfo>
   </div>
 </template>

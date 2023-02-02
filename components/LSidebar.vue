@@ -67,12 +67,12 @@ const selectedOrganisation = useState("organisation", () => organisations[0]);
 const name = useState("userName");
 
 const signOutLoading = ref(false);
-const supabase = useSupabaseClient();
+const authClient = useSupabaseAuthClient();
 
 const signOut = async () => {
   signOutLoading.value = true;
   try {
-    const { error: signOutError } = await supabase.auth.signOut();
+    const { error: signOutError } = await authClient.auth.signOut();
     if (signOutError) throw signOutError;
   } catch (error) {
     console.log(error);

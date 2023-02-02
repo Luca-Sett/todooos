@@ -1,5 +1,5 @@
 <template>
-  <div v-if="loading" class="grid h-screen place-items-center px-4 text-center">
+  <div v-if="pending" class="grid h-screen place-items-center px-4 text-center">
     <div>
       <div class="mb-2 grid place-items-center">
         <LAccent>
@@ -37,24 +37,18 @@
 </template>
 
 <script setup>
-const loading = ref(true);
-const error = ref(false);
 const name = useState("userName", () => null);
 
-const init = async () => {
-  const fetchedName = await $fetch("/api/getName", {
-    headers: useRequestHeaders(["cookie"]),
-  });
+const { data, error, pending } = await useLazyFetch("/api/name", {
+  headers: useRequestHeaders(["cookie"]),
+});
 
-  loading.value = false;
-
-  if (fetchedName.error) {
-    console.error("fetchedName error:", fetchedName.error);
-    error.value = true;
-  } else {
-    name.value = fetchedName.name;
-  }
-};
-
-init();
+watch(
+  [data, error],
+  ([newData, newError]) => {
+    if (newError) console.log(newError);
+    if (newData) name.value = newData.name;
+  },
+  { immediate: true }
+);
 </script>
